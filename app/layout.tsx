@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SocialIcon from "@/components/organisms/SocialIcon";
+import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
   title: "Creando un dev",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <main className="pt-12 bg-black">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
