@@ -1,20 +1,33 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'; 
+
 type ButtonLinkProps = {
   content: string;
   link: string;
-  active?: boolean;
 };
 
-export default function ButtonNav({ content, link, active = false }: ButtonLinkProps) {
+export default function ButtonNav({ content, link }: ButtonLinkProps) {
+
+  const pathname = usePathname();
+
+  // 2. Determinar si la ruta actual (pathname) coincide con el link del botón
+  // Usamos una lógica simple: si pathname === link, está activo.
+  // Nota: Si usas rutas indexadas (ej. '/'), es posible que necesites una lógica más compleja 
+  // (ej. pathname.startsWith(link)) si la ruta del link es la base de varias subrutas.
+  const isActive = pathname === link; 
+
   return (
-    <a
+    <Link
+      href={link}
       className={`
         text-sm font-medium leading-normal transition-colors
-        ${active ? "text-blue-400 border-b-2 border-blue-400" : "text-white hover:text-primary border-b-2 border-transparent"}
+        ${isActive ? "text-blue-400 border-b-2 border-blue-400" : "text-white hover:text-primary border-b-2 border-transparent"}
         pb-1
       `}
-      href={link}
     >
       {content}
-    </a>
+    </Link>
   );
 }

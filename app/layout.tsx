@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SocialIcon from "@/components/organisms/SocialIcon";
 
 export const metadata: Metadata = {
   title: "Creando un dev",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
+        <SocialIcon />
         {children}
       </body>
     </html>

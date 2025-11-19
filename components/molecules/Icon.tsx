@@ -6,10 +6,10 @@ type SocialIconProps = {
   alt: string;
 };
 
-export default function SocialIcon({ href, src, alt }: SocialIconProps) {
+export default function Icon({ href, src, alt }: SocialIconProps) {
   return (
     <a
-      className="flex h-10 w-10 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-white/10 text-white transition-colors hover:bg-white/20"
+      className="flex h-8 w-8 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-white/50 text-white transition-colors hover:bg-white/20"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

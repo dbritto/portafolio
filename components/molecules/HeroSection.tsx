@@ -2,6 +2,7 @@
 import ButtonPrimary from "../atoms/ButtonPrimary";
 import HeroText from "../atoms/HeroText";
 import TitleWithDescription from "../atoms/TitleWithDescription";
+import Icon from "./Icon";
 
 type HeroSectionProps = {
     title: string;
@@ -18,9 +19,11 @@ export default function HeroSection({ title, description, buttonText, buttonLink
                 <HeroText content={title}/>
 
                 <TitleWithDescription content={description}/>
-
-                    <ButtonPrimary content={buttonText} link={buttonLink} />
-                
+                 <ButtonPrimary content={buttonText} link={buttonLink} />
+                <div className="flex gap-2  md:mt-0 justify-center">
+                <Icon href="https://github.com/dbritto" src="/github.png" alt="GitHub Logo"/>
+                <Icon href="https://www.linkedin.com/in/daniel-britto-183aaa1a1/" src="/linkedin.png" alt="LinkedIn Logo" />
+            </div>
             </div>
         </section>
     );

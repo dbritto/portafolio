@@ -1,18 +1,34 @@
+'use client'
 import ButtonNav from "../atoms/ButtonNav";
-import SocialIcon from "../molecules/SocialIcon";
 
-export default function NavLink() {
+type ToggleMenuFunction = () => void;
+
+export interface NavLinkProps {
+    isOpen: boolean; 
+    isMobile: boolean;
+    toggleMenu: ToggleMenuFunction; 
+}
+
+export default function NavLink({ isOpen, isMobile, toggleMenu } : NavLinkProps) {
+    
+    if (isMobile && !isOpen) return null
+
+    const mobileClasses = "fixed top-[44px] left-0 right-0 h-60 bg-gray-900 flex-col items-center justify-center gap-6 p-5";
+    const desktopClasses = "hidden md:flex flex-1 justify-end items-center gap-8";
+
     return (
-        <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
-            <div className="flex items-center gap-9">
-                <ButtonNav content="sobre mi" link="#"  active/>
-                <ButtonNav content="proyectos" link="#" />
-                <ButtonNav content="Contacto" link="#" />
+        <nav className={`${isMobile ? mobileClasses : desktopClasses}`} >
+            <div 
+                className="flex flex-col md:flex-row items-center gap-4" 
+                onClick={isMobile ? toggleMenu : undefined}
+            >
+                <ButtonNav content="Inicio" link="/"/>
+                <ButtonNav content="Sobre mi" link="/about"/>
+                <ButtonNav content="Proyectos" link="/projects" />
+                <ButtonNav content="Contacto" link="/contact" />
             </div>
-            <div className="flex gap-2">
-                <SocialIcon href="https://github.com/dbritto" src="/github.png" alt="GitHub Logo" />
-                <SocialIcon href="https://www.linkedin.com/in/daniel-britto-183aaa1a1/" src="/linkedin.png" alt="LinkedIn Logo" />
-            </div>
+            
+           
         </nav>
     );
 }
