@@ -1,5 +1,6 @@
 import Skills from "../atoms/Skills";
 import SectionHeader from "../organisms/SectionHeader";
+import Perfil from "../organisms/Perfil";
 
 export interface HomeProps {
 
@@ -7,7 +8,7 @@ export interface HomeProps {
 
 const homeDataHeader = {
   title: "Desarrollador Full-Stack",
-  description: "Creando aplicaciones web modernas y robustas con React, Next.js, Node.js y MySQL",
+  description: "Creando aplicaciones web modernas y robustas ",
   buttonText: "Ver mis proyectos",
   buttonLink: "#",
   backgroundImage: "/fondo.jpeg"
@@ -24,6 +25,7 @@ export default function Home(props: HomeProps) {
       backgroundImage={homeDataHeader.backgroundImage}
     />
     <Skills/>
+    <Perfil/>
   </>
 
   );
