@@ -1,7 +1,5 @@
 
 import HeroSection from "../molecules/HeroSection";
-import Icon from "../molecules/Icon";
-import SocialIcon from "./SocialIcon";
 
 type HeroSectionProps = {
   title: string;
@@ -14,7 +12,7 @@ type HeroSectionProps = {
 export default function SectionHeader({ title, description, buttonLink, buttonText, backgroundImage }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full h-[50vh] md:h-screen bg-center"
+      className="relative w-full pb-3 md:h-screen bg-center"
       style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "93%",
@@ -22,7 +20,6 @@ export default function SectionHeader({ title, description, buttonLink, buttonTe
         }}
     >
       <div className="absolute inset-0 bg-black/70"></div>
-      {/* <SocialIcon/>  */}
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <HeroSection
