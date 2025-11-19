@@ -12,7 +12,7 @@ type HeroSectionProps = {
 export default function SectionHeader({ title, description, buttonLink, buttonText, backgroundImage }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full pb-3 md:h-screen bg-center"
+      className="relative w-full pb-3 md:h-[calc(100vh-48px)] bg-center "
       style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "93%",

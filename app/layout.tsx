@@ -16,10 +16,9 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <SocialIcon />
-        <main className="pt-16 bg-black">
+        <main className="pt-12 bg-black">
           {children}
         </main>
-
       </body>
     </html>
   );
