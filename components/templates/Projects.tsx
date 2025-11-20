@@ -50,7 +50,7 @@ export default function Projects() {
 
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
-                        <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 flex flex-col justify-end p-6 project-info opacity-100 transition-opacity duration-300">
                             <h3 className="text-xl font-bold text-white">{p.title}</h3>
                             <p className="mt-2 text-sm text-gray-200">{p.desc}</p>
                             <div className="mt-4 flex flex-wrap gap-2">
