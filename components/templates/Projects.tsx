@@ -51,31 +51,33 @@ export default function Projects() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
                         <div className="absolute inset-0 flex flex-col justify-end p-6 project-info opacity-100 transition-opacity duration-300">
-                            <h3 className="text-xl font-bold text-white">{p.title}</h3>
-                            <p className="mt-2 text-sm text-gray-200">{p.desc}</p>
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {p.tags.map((t) => (
-                                    <span key={t} className="inline-block px-2 py-1 text-xs font-medium text-gray-200 bg-white/10 rounded-full">{t}</span>
-                                ))}
-                            </div>
-                            <div className="mt-4 flex items-center gap-3">
-                                {p.repo ? (
-                                    <a
-                                        href={p.repo}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="inline-flex items-center gap-2 mt-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-3 py-1 text-xs font-semibold text-white shadow-sm hover:scale-105 transition-transform"
-                                    >
-                                        Repositorio
-                                    </a>
-                                ) : (
-                                    <span className="mt-4 inline-block text-xs text-gray-300">Repositorio pendiente</span>
-                                )}
+                            <div>
+                                <h3 className="text-xl font-bold text-white">{p.title}</h3>
+                                <p className="mt-2 text-sm text-gray-50 px-2 py-1 inline-block font-black desc-strong rounded bg-black/50">{p.desc}</p>
+                                <div className="mt-4 flex flex-wrap gap-2">
+                                    {p.tags.map((t) => (
+                                        <span key={t} className="inline-block px-2 py-1 text-xs font-medium text-gray-200 bg-white/10 rounded-full">{t}</span>
+                                    ))}
+                                </div>
+                                <div className="mt-4 flex items-center gap-3">
+                                    {p.repo ? (
+                                        <a
+                                            href={p.repo}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center gap-2 mt-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-3 py-1 text-xs font-semibold text-white hover:scale-105 transition-transform"
+                                        >
+                                            Repositorio
+                                        </a>
+                                    ) : (
+                                        <span className="mt-4 inline-block text-xs text-gray-300">Repositorio pendiente</span>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </article>
                 ))}
             </section>
-        </div>
+        </div>    
     );
 }
