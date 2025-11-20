@@ -12,7 +12,7 @@ export default function Projects() {
             desc: 'Tienda con integración a la API de WhatsApp para notificaciones y pedidos.',
             img: '/TiendaOnlineWhatsapp.png',
             tags: ['React', 'Next.js', 'WhatsApp API'],
-            repo: 'https://github.com/dbritto/StoreFrontend'
+            repo: ''
         },
         {
             title: 'App SwiftUI',
